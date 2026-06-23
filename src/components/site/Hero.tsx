@@ -69,15 +69,15 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="flex flex-wrap gap-3 pt-2"
           >
-            <Link to="/book">
+            <Link to="/plans">
               <button className="group inline-flex items-center gap-2 rounded-full bg-gradient-ember px-7 py-3.5 text-sm uppercase tracking-widest font-semibold text-primary-foreground shadow-ember">
-                Book a free trial
+                View Plans
                 <ArrowRight className="size-4 transition group-hover:translate-x-1" />
               </button>
             </Link>
-            <Link to="/plans">
+            <Link to="/contact">
               <button className="inline-flex items-center gap-2 rounded-full glass px-7 py-3.5 text-sm uppercase tracking-widest font-semibold hover:border-primary/60 transition">
-                <Dumbbell className="size-4" /> See plans
+                <Dumbbell className="size-4" /> Contact us
               </button>
             </Link>
           </motion.div>
