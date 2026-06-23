@@ -171,7 +171,14 @@ function PlansPage() {
                           </li>
                         ))}
                       </ul>
-                      <Link to="/contact" className="mt-7 block">
+                      <a
+                        href={`https://wa.me/917200390099?text=${encodeURIComponent(
+                          `Hi Eleve Studio! I'm interested in the ${plan.name} membership plan.`
+                        )}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-7 block"
+                      >
                         <button
                           className={cn(
                             "w-full rounded-full py-3 text-sm uppercase tracking-widest font-semibold transition",
@@ -182,7 +189,7 @@ function PlansPage() {
                         >
                           Enquire now
                         </button>
-                      </Link>
+                      </a>
                     </div>
                   </motion.div>
                 );
@@ -313,11 +320,16 @@ function ParallaxPlanSection({ plan, index }: { plan: Plan; index: number }) {
               </li>
             ))}
           </ul>
-          <Link to="/contact">
-            <button className="mt-4 group inline-flex items-center gap-2 rounded-full bg-gradient-ember px-7 py-3.5 text-sm uppercase tracking-widest font-semibold text-primary-foreground shadow-ember">
-              Enquire about {plan.name}
-            </button>
-          </Link>
+          <a
+            href={`https://wa.me/917200390099?text=${encodeURIComponent(
+              `Hi Eleve Studio! I'm interested in the ${plan.name} membership plan.`
+            )}`}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-4 group inline-flex items-center gap-2 rounded-full bg-gradient-ember px-7 py-3.5 text-sm uppercase tracking-widest font-semibold text-primary-foreground shadow-ember"
+          >
+            Enquire about {plan.name}
+          </a>
         </motion.div>
       </div>
     </section>
