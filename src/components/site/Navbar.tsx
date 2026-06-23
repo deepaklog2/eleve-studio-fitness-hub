@@ -2,21 +2,18 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 
 const links = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/plans", label: "Plans" },
-  { to: "/book", label: "Book Trial" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [authed, setAuthed] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
@@ -24,12 +21,6 @@ export function Navbar() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => setAuthed(!!data.session));
-    const { data: sub } = supabase.auth.onAuthStateChange((_e, s) => setAuthed(!!s));
-    return () => sub.subscription.unsubscribe();
   }, []);
 
   useEffect(() => setOpen(false), [pathname]);
@@ -70,15 +61,9 @@ export function Navbar() {
         </nav>
 
         <div className="hidden md:flex items-center gap-2">
-          {authed ? (
-            <Link to="/dashboard">
-              <Button variant="default" className="bg-gradient-ember text-primary-foreground hover:opacity-90">Dashboard</Button>
-            </Link>
-          ) : (
-            <Link to="/auth">
-              <Button variant="default" className="bg-gradient-ember text-primary-foreground hover:opacity-90">Join Now</Button>
-            </Link>
-          )}
+          <Link to="/plans">
+            <Button variant="default" className="bg-gradient-ember text-primary-foreground hover:opacity-90">View Plans</Button>
+          </Link>
         </div>
 
         <button
@@ -103,8 +88,8 @@ export function Navbar() {
               {l.label}
             </Link>
           ))}
-          <Link to={authed ? "/dashboard" : "/auth"} className="mt-2">
-            <Button className="w-full bg-gradient-ember text-primary-foreground">{authed ? "Dashboard" : "Join Now"}</Button>
+          <Link to="/plans" className="mt-2">
+            <Button className="w-full bg-gradient-ember text-primary-foreground">View Plans</Button>
           </Link>
         </div>
       )}
