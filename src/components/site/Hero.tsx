@@ -89,8 +89,8 @@ export function Hero() {
             className="flex items-center gap-8 pt-8 text-sm"
           >
             {[
-              ["500+", "Members"],
-              ["10+", "Trainers"],
+              ["2500+", "Members"],
+              ["13+", "Trainers"],
               ["4.7★", "Google Rating"],
             ].map(([k, v]) => (
               <div key={v}>
