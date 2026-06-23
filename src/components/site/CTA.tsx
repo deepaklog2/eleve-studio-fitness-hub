@@ -19,17 +19,17 @@ export function CTA() {
             Stop scrolling.<br />Start lifting.
           </h2>
           <p className="text-primary-foreground/80 mt-5 max-w-xl mx-auto relative">
-            First trial session is on us. Walk in, meet the trainers, feel the energy.
+            Walk in, meet the trainers, feel the energy. We're open from 5 AM.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3 relative">
-            <Link to="/book">
+            <Link to="/plans">
               <button className="group inline-flex items-center gap-2 rounded-full bg-background px-7 py-3.5 text-sm uppercase tracking-widest font-semibold text-foreground hover:bg-foreground hover:text-background transition">
-                Book free trial <ArrowRight className="size-4 transition group-hover:translate-x-1" />
+                View memberships <ArrowRight className="size-4 transition group-hover:translate-x-1" />
               </button>
             </Link>
-            <Link to="/plans">
+            <Link to="/contact">
               <button className="inline-flex items-center gap-2 rounded-full border border-background/40 text-primary-foreground px-7 py-3.5 text-sm uppercase tracking-widest font-semibold hover:bg-background/10 transition">
-                View memberships
+                Contact us
               </button>
             </Link>
           </div>

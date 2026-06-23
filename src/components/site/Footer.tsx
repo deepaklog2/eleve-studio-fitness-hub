@@ -24,7 +24,6 @@ export function Footer() {
             ["/", "Home"],
             ["/about", "About"],
             ["/plans", "Plans"],
-            ["/book", "Book Trial"],
             ["/contact", "Contact"],
           ].map(([to, label]) => (
             <Link key={to} to={to} className="block text-sm text-muted-foreground hover:text-primary">
