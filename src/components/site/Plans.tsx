@@ -90,7 +90,7 @@ export function Plans({ compact = false }: { compact?: boolean }) {
                     </li>
                   ))}
                 </ul>
-                <Link to="/auth" className="mt-7">
+                <Link to="/plans" className="mt-7">
                   <button
                     className={cn(
                       "w-full rounded-full py-3 text-sm uppercase tracking-widest font-semibold transition",
@@ -99,7 +99,7 @@ export function Plans({ compact = false }: { compact?: boolean }) {
                         : "glass hover:border-primary/60",
                     )}
                   >
-                    Join now
+                    View plan
                   </button>
                 </Link>
               </motion.div>
